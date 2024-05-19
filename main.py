@@ -42,12 +42,8 @@ while True:
                 
         countFingers= fingers.count(1)
     
-        if countFingers == 0:
-            h, w, c= lst_2[5].shape
-            frame[0:h, 0:w]= lst_2[5]
-        else:
-            h, w, c= lst_2[countFingers-1].shape
-            frame[0:h, 0:w]= lst_2[countFingers-1]
+        h, w, c= lst_2[countFingers-1].shape
+        frame[0:h, 0:w]= lst_2[countFingers-1]
 
         cv2.rectangle(frame, (0, 200), (150, 400), (0, 255, 0), 2)
         cv2.putText(frame, str(countFingers), (30, 350), cv2.FONT_HERSHEY_PLAIN, 10, (255, 0, 0), 3)
